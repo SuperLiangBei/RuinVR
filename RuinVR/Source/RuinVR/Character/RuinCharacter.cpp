@@ -12,11 +12,15 @@ const FName ARuinCharacter::MeshCollisionProfileName(TEXT("CharacterMesh"));
 ARuinCharacter::ARuinCharacter(const FObjectInitializer& ObjectInitializer)
 	:Super(ObjectInitializer.SetDefaultSubobjectClass<URuinCharacterMovementComponent>(ACharacter::CharacterMovementComponentName))
 {
+	/** Mesh初始化设置 */
 	GetMesh()->SetCollisionProfileName(ARuinCharacter::MeshCollisionProfileName);
 	GetMesh()->bSingleSampleShadowFromStationaryLights = true;//整个组件是否应该像静止灯一样被遮住，这使得阴影接收更便宜。当启用阴影数据来自Lightmass预先计算的体积光照样本，这些样本非常稀疏。目前这只适用于固定方向灯
 	GetMesh()->bGenerateOverlapEvents = false;//关闭重叠事件
 	GetMesh()->MeshComponentUpdateFlag = EMeshComponentUpdateFlag::AlwaysTickPoseAndRefreshBones; //总是勾选并刷新BoneTransforms
 	GetMesh()->bApplyImpulseOnDamage = false;
+
+	/** Capsule初始化设置 */
+
 
 	//关闭“无论我们是否总是在走路时强制对固定角色的地板检查"
 	GetCharacterMovement()->bAlwaysCheckFloor = false;
