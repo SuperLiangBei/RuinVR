@@ -6,6 +6,8 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "RuinBlueprintFunctionLibrary.generated.h"
 
+class RuinGameMode;
+
 /**
  * 
  */
@@ -14,7 +16,10 @@ class RUINVR_API URuinBlueprintFunctionLibrary : public UBlueprintFunctionLibrar
 {
 	GENERATED_BODY()
 	
-	
+public:
+	/** ·µ»ØÓÎÏ·µÄGameMode */
+	UFUNCTION(BlueprintPure, Category = "Ruin", meta = (WorldContext = "WorldContextObject"))
+	static ARuinGameMode* GetRuinGameMode(UObject* WorldContextObject);
 	
 	
 };
