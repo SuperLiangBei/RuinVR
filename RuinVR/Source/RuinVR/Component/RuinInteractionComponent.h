@@ -7,7 +7,7 @@
 #include "RuinInteractionComponent.generated.h"
 
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS( ClassGroup=("RuinInteraction"),BlueprintType, Blueprintable, hideCategories = (Collision, Sockets), meta=(BlueprintSpawnableComponent) )
 class RUINVR_API URuinInteractionComponent : public UActorComponent
 {
 	GENERATED_BODY()
